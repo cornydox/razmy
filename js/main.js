@@ -1,24 +1,21 @@
 
+
+
+jQuery.expr.filters.offscreen = function(el) {
+  return (
+              (el.offsetLeft + el.offsetWidth) < 0 
+              || (el.offsetTop + el.offsetHeight) < 0
+              || (el.offsetLeft > window.innerWidth || el.offsetTop > window.innerHeight)
+         );
+};
+
 $(function(){
-	var $container = $('#canvas');
-	$container.imagesLoaded(function(){
-	  $container.masonry({
-	    itemSelector : '.box',	    
-	    // isFitWidth: true,
-	    isAnimated: true,
-	    columnWidth: function( containerWidth ) {
-	    	return containerWidth / 5;
-		},
-		animationOptions: {
-			duration: 450,
-			easing: 'linear',
-			queue: false
-		}
-	  });
-	});
+	
 });
 
 $(window).load(function(){
 	
 	// $('#canvas').masonry('reload');
 });
+
+
